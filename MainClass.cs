@@ -1,10 +1,10 @@
 ﻿using System;
 
-public class MainClass1
+namespace GemHuntersGame
 {
-	public MainClass1()
-	{
-        public static void Main(string[] args)
+    class MainClass
+    {
+        static void Main(string[] args)
         {
             GameConditions gemHunters = new GameConditions();
             Console.WriteLine("Printed");

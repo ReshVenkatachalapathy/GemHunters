@@ -2,7 +2,7 @@
 
 namespace GemHuntersGame
 {
-    public class Game
+    public class GameConditions
     {
         private DesignBoard Board { get; }
         private PlayerMovements Player1 { get; }
@@ -10,7 +10,7 @@ namespace GemHuntersGame
         private PlayerMovements CurrentTurn { get; set; }
         private int TotalTurns { get; set; }
 
-        public Game()
+        public GameConditions()
         {
             Board = new DesignBoard();
             Player1 = new PlayerMovements("P1", new Position(0, 0));
@@ -26,12 +26,20 @@ namespace GemHuntersGame
                 Board.Display();
                 Console.WriteLine($"Current turn: {CurrentTurn.Name}");
                 Console.WriteLine("Enter move (U/D/L/R):");
-                char move = Console.ReadKey().KeyChar;
+                char move = System.Console.ReadKey().KeyChar;
                 Console.WriteLine();
                 if (Board.IsValidMove(CurrentTurn, move))
                 {
+                    int beforeXIndex, beforetYIndex;
+                    beforeXIndex = CurrentTurn.Position.X;
+                    beforetYIndex = CurrentTurn.Position.Y;
                     CurrentTurn.Move(move);
-                    Board.CollectGem(CurrentTurn);
+                    char c = Board.CollectGem(CurrentTurn);
+                    if(c=='G'){
+                        c = '-';
+                    }                
+                    Board.updateBoard(beforeXIndex,beforetYIndex,CurrentTurn.Position.X,CurrentTurn.Position.Y,CurrentTurn.previousValue,CurrentTurn.Name);
+                    CurrentTurn.previousValue=c;
                     SwitchTurn();
                     TotalTurns++;
                 }

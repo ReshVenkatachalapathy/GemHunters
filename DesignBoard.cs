@@ -16,6 +16,11 @@ namespace GemHuntersGame
             InitializeBoard();
         }
 
+        public void updateBoard(int i, int j, int x, int y, char a, String b){
+            Grid[i,j] = new Cell(""+a);
+            Grid[x,y] = new Cell(b);
+        }
+
         public void InitializeBoard()
         {
             // Initialize cells
@@ -74,16 +79,16 @@ namespace GemHuntersGame
 
             switch (direction)
             {
-                case 'U':
+                case 'L':
                     newY--;
                     break;
-                case 'D':
+                case 'R':
                     newY++;
                     break;
-                case 'L':
+                case 'U':
                     newX--;
                     break;
-                case 'R':
+                case 'D':
                     newX++;
                     break;
                 default:
@@ -95,7 +100,7 @@ namespace GemHuntersGame
                 return false; // Out of bounds
             }
 
-            if (Grid[newX, newY].Occupant == "O")
+            if (Grid[newX, newY].Occupant == "O" || Grid[newX, newY].Occupant == "P1" || Grid[newX, newY].Occupant == "P2")
             {
                 return false; // Obstacle
             }
@@ -103,12 +108,19 @@ namespace GemHuntersGame
             return true;
         }
 
-        public void CollectGem(PlayerMovements player)
+        public char CollectGem(PlayerMovements player)
         {
             if (Grid[player.Position.X, player.Position.Y].Occupant == "G")
             {
                 player.GemCount++;
                 Grid[player.Position.X, player.Position.Y].Occupant = "-";
+                return 'G';
+            }
+            else if(Grid[player.Position.X, player.Position.Y].Occupant == "O"){
+                return 'O';
+            }
+            else{
+                return '-';
             }
         }
 

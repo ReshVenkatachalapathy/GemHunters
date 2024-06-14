@@ -9,7 +9,7 @@ namespace GemHuntersGame
     public class Class1
     {
     }
-    class Position
+    public class Position
     {
         public int X { get; }
         public int Y { get; }
