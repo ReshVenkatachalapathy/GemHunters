@@ -34,5 +34,9 @@ Sample Game Run Screenshot:
 Game Board Screenshot: ![image](https://github.com/ReshVenkatachalapathy/GemHunters/assets/170285525/2c11443b-f1da-4044-863f-7d668e64b085)
 Player Movement Screenshot: ![image](https://github.com/ReshVenkatachalapathy/GemHunters/assets/170285525/64d5bd8e-053c-425e-9435-6f58531f4cfe)
 Invalid Move Screenshot: ![image](https://github.com/ReshVenkatachalapathy/GemHunters/assets/170285525/3bef99ec-6f72-4f98-9438-a774793b72b7)
+Winner Announcement Screenshot: ![image](https://github.com/ReshVenkatachalapathy/GemHunters/assets/170285525/28100d85-3890-4922-b717-ea5dc53fdb50)
+Players are tied Screenshot: ![image](https://github.com/ReshVenkatachalapathy/GemHunters/assets/170285525/eaeb5c3d-89fa-49f9-aeae-7e47539a0893)
+
+
 
 
