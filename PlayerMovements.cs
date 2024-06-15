@@ -1,4 +1,18 @@
-﻿using System;
+﻿/* Developer: Reshma Venkatachalapathy
+ * Date:12-06-2024
+ * Project Details: Project for creating a game called "Gem Hunters". A 6*6 matrix board 
+ *                  with two players where they get to collect the gems. Player with most 
+ *                  gems will win the game.
+ * Code Description: This task will verify the below conditions of the game,
+ *                   -> Verify the player's movement is only left,right,up and down.If any
+ *                   other move is instructed then display invalid
+ *       
+ *                
+ *                   
+ */
+
+
+using System;
 
 namespace GemHuntersGame
 {
@@ -18,6 +32,7 @@ namespace GemHuntersGame
             previousValue = '-';
         }
 
+        // Method will move player based on user's direction
         public void Move(char direction)
         {
             switch (direction)

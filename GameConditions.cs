@@ -1,4 +1,20 @@
-﻿using System;
+﻿/* Developer: Reshma Venkatachalapathy
+ * Date:12-06-2024
+ * Project Details: Project for creating a game called "Gem Hunters". A 6*6 matrix board 
+ *                  with two players where they get to collect the gems. Player with most 
+ *                  gems will win the game.
+ * Code Description: This task will verify the below conditions of the game,
+ *                   -> Start the game,
+ *                   -> Check the moves of the player is valid, 
+ *                   -> Number of turns are within the limit,
+ *                   -> Switch the players for their turn,
+ *                   -> Announce the winner. If the gems collected are same then announce 
+ *                   as tied.
+ *                   
+ */
+
+
+using System;
 
 namespace GemHuntersGame
 {
@@ -19,6 +35,7 @@ namespace GemHuntersGame
             TotalTurns = 0;
         }
 
+        // Method will start the game by desplaying the player turns and moves
         public void Start()
         {
             while (!IsGameOver())
@@ -51,6 +68,7 @@ namespace GemHuntersGame
             AnnounceWinner();
         }
 
+        // Switch the player turns
         private void SwitchTurn()
         {
             CurrentTurn = (CurrentTurn == Player1) ? Player2 : Player1;
@@ -61,6 +79,8 @@ namespace GemHuntersGame
             return TotalTurns >= 30;
         }
 
+
+        // Method will display the winner details
         private void AnnounceWinner()
         {
             Console.WriteLine("Game over!");

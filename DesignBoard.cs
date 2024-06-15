@@ -1,4 +1,20 @@
-﻿using System;
+﻿/* Developer: Reshma Venkatachalapathy
+ * Date:12-06-2024
+ * Project Details: Project for creating a game called "Gem Hunters". A 6*6 matrix board 
+ *                  with two players where they get to collect the gems. Player with most 
+ *                  gems will win the game.
+ * Code Description: This task will verify the below conditions of the game,
+ *                   -> Create a 6*6 matrix for the board,
+ *                   -> Check the moves of the player is valid, 
+ *                   -> Number of turns are within the limit,
+ *                   -> Switch the players for their turn,
+ *                   -> Announce the winner. If the gems collected are same then announce 
+ *                   as tied.
+ *                   
+ */
+
+
+using System;
 
 
 namespace GemHuntersGame
@@ -21,9 +37,10 @@ namespace GemHuntersGame
             Grid[x,y] = new Cell(b);
         }
 
+        //Method will create a 6*6 matrix for the board
         public void InitializeBoard()
         {
-            // Initialize cells
+            
             for (int i = 0; i < 6; i++)
             {
                 for (int j = 0; j < 6; j++)
@@ -32,11 +49,11 @@ namespace GemHuntersGame
                 }
             }
 
-            // Place players
+            // Assign the players in their positions
             Grid[0, 0].Occupant = "P1";
             Grid[5, 5].Occupant = "P2";
 
-            // Place gems and obstacles (for simplicity, randomly placed)
+            // Assign the gems and obstacles in the board randomly
             Random random = new Random();
             for (int i = 0; i < 4; i++)
             {
@@ -60,6 +77,8 @@ namespace GemHuntersGame
             }
         }
 
+
+        // Display the board after making the move by the user
         public void Display()
         {
             for (int i = 0; i < 6; i++)
@@ -72,6 +91,7 @@ namespace GemHuntersGame
             }
         }
 
+        // Verify if the user given direction is valid move.
         public bool IsValidMove(PlayerMovements player, char direction)
         {
             int newX = player.Position.X;
@@ -97,17 +117,18 @@ namespace GemHuntersGame
 
             if (newX < 0 || newX >= 6 || newY < 0 || newY >= 6)
             {
-                return false; // Out of bounds
+                return false; 
             }
 
             if (Grid[newX, newY].Occupant == "O" || Grid[newX, newY].Occupant == "P1" || Grid[newX, newY].Occupant == "P2")
             {
-                return false; // Obstacle
+                return false; 
             }
 
             return true;
         }
 
+        //Method will collect the gems if it is 'G' and restrict move if it is 'O'
         public char CollectGem(PlayerMovements player)
         {
             if (Grid[player.Position.X, player.Position.Y].Occupant == "G")
