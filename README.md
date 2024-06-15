@@ -1,9 +1,15 @@
 Project Name: GemHunters
+
 Author: Reshma Venkatachalpathy
+
 Version History: Version 2.0
+
 Project Details: Project for creating a game called "Gem Hunters". A 6*6 matrix board with two players where they get to collect the gems. Player with most gems will win the game.
+
 Code Description: Below are the list of class files and their code descrition:
+
 1) MainClass.cs -  This is the main task which will call the consequent methods.
+   
 2) GameConditions.cs - This task will verify the below conditions of the game,
                    -> Start the game,
                    -> Check the moves of the player is valid, 
@@ -11,6 +17,7 @@ Code Description: Below are the list of class files and their code descrition:
                    -> Switch the players for their turn,
                    -> Announce the winner. If the gems collected are same then announce 
                        as tied.
+   
 3) DesignBoard.cs - This task will verify the below conditions of the game,
                    -> Create a 6*6 matrix for the board,
                    -> Check the moves of the player is valid, 
